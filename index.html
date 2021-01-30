@@ -13,9 +13,6 @@
     <!-- Bootstrap CDN-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -41,83 +38,201 @@
     <!--Booking Section-->
     <main class="main-content c-container pt-5 pb-5">
         <div class="booking-form">
-            <h3>Booking Flights</h3>
-            <div class="input-group">
-                <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
-            </div>
-            <div class="input-group">
-                <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
-            </div>
-            <div class="inputs">
+            <div id="before-booking">
+                <h3>Booking Flights</h3>
                 <div class="input-group">
-                    <label" for="">Departure</label>
+                    <label for="">Flying From</label>
+                    <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+                </div>
+                <div class="input-group">
+                    <label for="">Flying To</label>
+                    <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                </div>
+                <div class="inputs">
+                    <div class="input-group">
+                        <label for="">Departure</label>
                         <input class="inp-style" type="date" name="">
-                </div>
-                <div class="input-group">
-                    <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
-                </div>
-            </div>
-            <div class="input-group f-class">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input id="first-class-input" class="inp-style inp-width" type="number" name="" value="0">
-                </div>
-                <div class="d-flex justify-content-around align-items-center">
-                    <button onclick="handleTicketChange('first', true)" class="btn plus-minus-btn">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button onclick="handleTicketChange('first', false)" class="btn plus-minus-btn">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="input-group f-class">
-                <div>
-                    <label for="">Economy ($100)</label>
-                    <input id="economy-class-input" class="inp-style inp-width" type="number" name="" value="0">
-                </div>
-                <div class="d-flex justify-content-around align-items-center">
-                    <button onclick="handleTicketChange('economy', true)" class="btn plus-minus-btn">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button onclick="handleTicketChange('economy', false)" class="btn plus-minus-btn">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="calculations">
-                <div class="amount">
-                    <div class="left">
-                        <p>Subtotal</p>
                     </div>
-                    <div class="right">
-                        <p id="subtotal">$0</p>
+                    <div class="input-group">
+                        <label for="">Return</label>
+                        <input class="inp-style" type="date" name="">
+                    </div>
+                </div>
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">First Class ($150)</label>
+
+                        <div class="custom-input-field">
+                            <div>
+                                <input id="first-class-input" class="inp-style inp-width" type="number" name=""
+                                    value="0">
+                            </div>
+
+                            <div class="d-flex justify-content-around align-items-center">
+                                <button onclick="handleTicketChange('first', true)" class="btn plus-minus-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button onclick="handleTicketChange('first', false)" class="btn plus-minus-btn">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="amount">
-                    <div class="left">
-                        <p>Charge 10% VAT</p>
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">Economy ($100)</label>
+
+                        <div class="custom-input-field">
+                            <div>
+                                <input id="economy-class-input" class="inp-style inp-width" type="number" name=""
+                                    value="0">
+                            </div>
+                            <div class="d-flex justify-content-around align-items-center">
+                                <button onclick="handleTicketChange('economy', true)" class="btn plus-minus-btn">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button onclick="handleTicketChange('economy', false)" class="btn plus-minus-btn">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="right">
-                        <p id="vat">$0</p>
+
+                </div>
+                <div class="calculations">
+                    <div class="amount">
+                        <div class="left">
+                            <p>Subtotal</p>
+                        </div>
+                        <div class="right">
+                            <p id="subtotal">$0</p>
+                        </div>
+                    </div>
+
+                    <div class="amount">
+                        <div class="left">
+                            <p>Charge 10% VAT</p>
+                        </div>
+                        <div class="right">
+                            <p id="vat">$0</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="amount">
+                        <div class="left">
+                            <h4>Total</h4>
+                        </div>
+                        <div class="right">
+                            <p id="total">$0</p>
+                        </div>
                     </div>
                 </div>
+                <button id="book-now-btn" onclick="checkoutDisplay('none', 'block')" class="btn btn-style">Book Now</button>
+            </div>
+
+            <div id="after-booking">
+                <h3>Order Details</h3>
+                <p class="warning-message">Please ckeck carefully before you confirm your order</p>
                 <hr>
-                <div class="amount">
-                    <div class="left">
-                        <h4>Total</h4>
-                    </div>
-                    <div class="right">
-                        <p id="total">$0</p>
-                    </div>
+
+
+                <table class="table table-borderless mt-3 mb-3 table-light">
+                    <tr>
+                        <td scope="col" class="text-start">
+                            <i class="fas fa-plane-departure blue-color me-2"></i> From
+                        </td>
+                        <td scope="col" class="text-end">
+                            <b class="blue-color">Dhaka, Bangladesh</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td scope="col" class="text-start">
+                            <i class="fas fa-plane-arrival blue-color me-2"></i> To
+                        </td>
+                        <td scope="col" class="text-end">
+                            <b class="blue-color">New York, United States</b>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table table-borderless mt-3 mb-5">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">Class</th>
+                            <th scope="col" class="text-center">Quantity</th>
+                            <th scope="col" class="text-end">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>First</td>
+                            <td class="text-center"><span id="checkout-fc-qty">2</span><i
+                                    class="fas fa-ticket-alt ms-2 blue-color"></i></td>
+                            <td id="checkout-fc-cost" class="text-end">$300</td>
+                        </tr>
+                        <tr>
+                            <td>Economy</td>
+                            <td class="text-center"><span id="checkout-ec-qty">2</span><i
+                                    class="fas fa-ticket-alt ms-2 blue-color"></i></td>
+                            <td id="checkout-ec-cost" class="text-end">$200</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Subtotal</td>
+                            <td id="checkout-subtotal" class="text-end">$500</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">VAT (10%)</td>
+                            <td id="checkout-vat" class="text-end">$50</td>
+                        </tr>
+                        <tr class="plus-minus-btn">
+                            <td colspan="2"><b>Total</b></td>
+                            <td id="checkout-total" class="text-end"><b>$550</b></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <h3>Billing Details</h3>
+                <hr>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control m-0" placeholder="Recipient's Name" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                    <span class="card-icons"><i class="fas fa-user"></i></span>
                 </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control m-0" placeholder="Recipient's Email"
+                        aria-describedby="basic-addon1">
+                    <span class="card-icons"><i class="fas fa-envelope"></i></span>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control m-0" placeholder="Card Number"
+                        aria-describedby="basic-addon1">
+                    <span class="card-icons"><i class="fas fa-credit-card"></i></span>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input class="form-control m-0" type="date" name="" placeholder="Expiry Date">
+                    <span class="card-icons"><i class="fas fa-calendar-week"></i></span>
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control m-0" placeholder="CVC" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                    <span class="card-icons"><i class="fas fa-unlock"></i></span>
+                </div>
+
+                <button id="previous-btn" onclick="checkoutDisplay('block', 'none')" class="btn previous-btn-style mb-3">Previous </button>
+
+                <button class="btn btn-style">Proceed to checkout <i
+                        class="fas fa-long-arrow-alt-right ms-2"></i></button>
+
             </div>
-            <button id="book-now-btn" class="btn btn-style">Book Now</button>
         </div>
 
         <div class="booking-content">
@@ -126,11 +241,19 @@
                 veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
                 voluptatibus quam</p>
         </div>
+
     </main>
 
 
     <!--JavaScript-->
     <script>
+        const beforeBooking = document.getElementById("before-booking");
+        const afterBooking = document.getElementById("after-booking");
+
+        function checkoutDisplay(beforeBookingDisplay, afterBookingDisplay) {
+            beforeBooking.style.display = beforeBookingDisplay;
+            afterBooking.style.display = afterBookingDisplay;
+        }
 
         function ticketCount(ticketClass) {
             const ticketClassInput = document.getElementById(ticketClass + "-class-input");
@@ -156,13 +279,19 @@
 
             ticketClassInput.value = ticketClassNewCount;
 
-            calculateCost(ticketCount('first'), ticketCount('economy'));
+            displayCost(ticketCount('first'), ticketCount('economy'));
             validateBooking(ticketCount('first'), ticketCount('economy'));
         }
 
-        function calculateCost(firstClassCount, economyClassCount) {
+        function displayCost(firstClassCount, economyClassCount) {
+            document.getElementById("checkout-fc-qty").innerText = firstClassCount;
+            document.getElementById("checkout-ec-qty").innerText = economyClassCount;
+
             const firstClassCost = 150 * firstClassCount;
             const economyClassCost = 100 * economyClassCount;
+
+            document.getElementById("checkout-fc-cost").innerText = '$' + firstClassCost;
+            document.getElementById("checkout-ec-cost").innerText = '$' + economyClassCost;
 
             const subtotal = firstClassCost + economyClassCost;
             const vat = subtotal * 0.1;
@@ -171,6 +300,10 @@
             document.getElementById("subtotal").innerText = '$' + subtotal;
             document.getElementById("vat").innerText = '$' + vat;
             document.getElementById("total").innerText = '$' + total;
+
+            document.getElementById("checkout-subtotal").innerText = '$' + subtotal;
+            document.getElementById("checkout-vat").innerText = '$' + vat;
+            document.getElementById("checkout-total").innerText = '$' + total;
         }
 
         function validateBooking(firstClassCount, economyClassCount) {
