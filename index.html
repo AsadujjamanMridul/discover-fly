@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Booking</title>
+    <title>Discover Fly</title>
+
+    <link rel="shortcut icon" href="images/globe.png" type="image/x-icon">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
@@ -24,7 +27,7 @@
 
 <body>
     <!--Header and Menu Section-->
-    <header class="c-container">
+    <header class="c-container mt-3">
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
@@ -38,7 +41,9 @@
     <!--Booking Section-->
     <main class="main-content c-container pt-5 pb-5">
         <div class="booking-form">
-            <div id="before-booking">
+
+            <!--Before Booking Layout-->
+            <section id="before-booking">
                 <h3>Booking Flights</h3>
                 <div class="input-group">
                     <label for="">Flying From</label>
@@ -130,9 +135,10 @@
                     </div>
                 </div>
                 <button id="book-now-btn" onclick="checkoutDisplay('none', 'block')" class="btn btn-style">Book Now</button>
-            </div>
+            </section>
 
-            <div id="after-booking">
+            <!--After Booking Layout-->
+            <section id="after-booking">
                 <h3>Order Details</h3>
                 <p class="warning-message">Please ckeck carefully before you confirm your order</p>
                 <hr>
@@ -170,27 +176,27 @@
                             <td>First</td>
                             <td class="text-center"><span id="checkout-fc-qty">2</span><i
                                     class="fas fa-ticket-alt ms-2 blue-color"></i></td>
-                            <td id="checkout-fc-cost" class="text-end">$300</td>
+                            <td class="text-end"><span  id="checkout-fc-cost">$300</span></td>
                         </tr>
                         <tr>
                             <td>Economy</td>
                             <td class="text-center"><span id="checkout-ec-qty">2</span><i
                                     class="fas fa-ticket-alt ms-2 blue-color"></i></td>
-                            <td id="checkout-ec-cost" class="text-end">$200</td>
+                            <td class="text-end"><span id="checkout-ec-cost">$200</span></td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
                             <td colspan="2">Subtotal</td>
-                            <td id="checkout-subtotal" class="text-end">$500</td>
+                            <td class="text-end"><span id="checkout-subtotal" >$500</span></td>
                         </tr>
                         <tr>
                             <td colspan="2">VAT (10%)</td>
-                            <td id="checkout-vat" class="text-end">$50</td>
+                            <td class="text-end"><span id="checkout-vat">$50</span></td>
                         </tr>
                         <tr class="plus-minus-btn">
                             <td colspan="2"><b>Total</b></td>
-                            <td id="checkout-total" class="text-end"><b>$550</b></td>
+                            <td class="text-end"> <b> <span id="checkout-total">$550</span> </b> </td>
                         </tr>
                     </tfoot>
                 </table>
@@ -232,7 +238,7 @@
                 <button class="btn btn-style">Proceed to checkout <i
                         class="fas fa-long-arrow-alt-right ms-2"></i></button>
 
-            </div>
+            </section>
         </div>
 
         <div class="booking-content">
@@ -247,12 +253,12 @@
 
     <!--JavaScript-->
     <script>
-        const beforeBooking = document.getElementById("before-booking");
-        const afterBooking = document.getElementById("after-booking");
+        const beforeBookingLayout = document.getElementById("before-booking");
+        const afterBookingLayout = document.getElementById("after-booking");
 
         function checkoutDisplay(beforeBookingDisplay, afterBookingDisplay) {
-            beforeBooking.style.display = beforeBookingDisplay;
-            afterBooking.style.display = afterBookingDisplay;
+            beforeBookingLayout.style.display = beforeBookingDisplay;
+            afterBookingLayout.style.display = afterBookingDisplay;
         }
 
         function ticketCount(ticketClass) {
