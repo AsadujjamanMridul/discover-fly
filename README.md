@@ -3,11 +3,11 @@
 <br/>
 
 <p align="center">
-  <img src="screenshots/1.png" width="50%" align="center"/>
+  <img src="screenshots/1.png" width="75%" align="center"/>
 </p>
-<br/>
+
 <p align="center">
-  <img src="screenshots/2.png" width="50%" align="center"/>
+  <img src="screenshots/2.png" width="75%" align="center"/>
 </p>
 
 <br/>
